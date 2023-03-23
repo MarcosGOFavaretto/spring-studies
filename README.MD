@@ -22,3 +22,30 @@ After select some modules for a new Spring application on [Spring Initializr](ht
 ```
 
 Spring Framework is declared as a parent. Because of that reason, all Spring's plugins (modules) does not requests the `<version>` tag, since that information is inherited of the parent `POM`.
+
+# Running a Spring application.
+
+By default, Spring Boot contains on its dependencies a server that runs our Java application: Apache Tomcat. Therefore, it is not necessary to download server applications.
+
+Spring projects contains a class called as Project + Application, for example: ApiApplication, MySpringProjectApplication, etc.
+
+That class contains the `@SpringBootApplication` annotations, which means that the entry point is declared on that class.
+
+By executing it, the Spring boot will turn the server up and provide our application for use.
+
+
+```
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+[...] omitted.
+
+2023-03-21T23:46:12.970-03:00  INFO 480 --- [  restartedMain] medi.voll.api.ApiApplication             : Started ApiApplication in 5.59 seconds (process running for 6.894)
+
+```
