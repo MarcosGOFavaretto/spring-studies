@@ -49,3 +49,50 @@ By executing it, the Spring boot will turn the server up and provide our applica
 2023-03-21T23:46:12.970-03:00  INFO 480 --- [  restartedMain] medi.voll.api.ApiApplication             : Started ApiApplication in 5.59 seconds (process running for 6.894)
 
 ```
+
+# Hello World in Spring.
+
+To create a Hello World in Spring Boot by using a RESTFull API is quite simple.
+
+The first thing we need to do is create a class with the `@RestController` and `RequestMapping("/my/endpoint/name")` annotations.
+
+>The **first** one defines that our class is a **RESTFull controller** that deals with the requests. The **second** one defines the **end-point** that triggers the created controller.
+
+```java
+package br.estudies.spring.helloworld.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/hello")
+public class HelloWorldController {
+
+}
+```
+
+It is also necessary to tell Spring what to return during our request. It can be implemented on GET requests, by using the `@GetMapping`.
+
+>That annotation defines which method of the entire class should be executed on GET requests for the specified end-point.
+
+```java
+package br.estudies.spring.helloworld.controller;
+
+import org.springframework.web.bind.annotation.GetMapping; // Added.
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/hello")
+public class HelloWorldController {
+
+    // Method and annotation added.
+    @GetMapping
+	public String sayHello() {
+		return "Hello World!";
+	}
+
+}
+```
+
+Done! After run the `@SpringBootApplication` annotated class and access the [created end-point](http://localhost:8080/hello), a beautiful `Hello World!` message will be displayed.
