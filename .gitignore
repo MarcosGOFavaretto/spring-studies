@@ -1,1 +1,26 @@
+# Eclipse.
 /.metadata
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# Visual Studio Code.
+./vscode
+
+# Spring Boot.
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Java.
+*.classpath
+*.project
+
+# Another files
+*.json
