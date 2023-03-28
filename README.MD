@@ -29,7 +29,7 @@ By default, Spring Boot contains on its dependencies a server that runs our Java
 
 Spring projects contains a class called as Project + Application, for example: ApiApplication, MySpringProjectApplication, etc.
 
-That class contains the `@SpringBootApplication` annotations, which means that the entry point is declared on that class.
+> That class contains the `@SpringBootApplication` annotations, which means that the entry point is declared on that class.
 
 By executing it, the Spring boot will turn the server up and provide our application for use.
 
@@ -96,3 +96,11 @@ public class HelloWorldController {
 ```
 
 Done! After run the `@SpringBootApplication` annotated class and access the [created end-point](http://localhost:8080/hello), a beautiful `Hello World!` message will be displayed.
+
+# Voll Medi.
+
+Voll Medi is an example of application that will be implemented during the [Alura Spring Boot course for Rest APIs](https://cursos.alura.com.br/course/spring-boot-3-desenvolva-api-rest-java).
+
+During each class, the professor [Rodrigo Ferreira](https://www.linkedin.com/in/rcaneppele) improves functionalities for that API, teaching new concepts about Spring Boot.
+
+That project is present on that repository, besides, its code will not be documented here, only its concepts.
