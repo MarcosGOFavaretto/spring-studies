@@ -206,3 +206,6 @@ curl --location 'http://localhost:8080/pets' \
     }
 }
 ```
+**Result of a GET request:**
+
+![image](https://user-images.githubusercontent.com/71560285/227100330-12eae70d-f8c8-45c0-9f09-3db6af7154f4.png)
