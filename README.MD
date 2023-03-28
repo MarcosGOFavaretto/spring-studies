@@ -97,6 +97,10 @@ public class HelloWorldController {
 
 Done! After run the `@SpringBootApplication` annotated class and access the [created end-point](http://localhost:8080/hello), a beautiful `Hello World!` message will be displayed.
 
+**Result of a GET request:**
+
+![image](https://user-images.githubusercontent.com/71560285/227100330-12eae70d-f8c8-45c0-9f09-3db6af7154f4.png)
+
 # Voll Medi.
 
 Voll Medi is an example of application that will be implemented during the [Alura Spring Boot course for Rest APIs](https://cursos.alura.com.br/course/spring-boot-3-desenvolva-api-rest-java).
@@ -206,6 +210,3 @@ curl --location 'http://localhost:8080/pets' \
     }
 }
 ```
-**Result of a GET request:**
-
-![image](https://user-images.githubusercontent.com/71560285/227100330-12eae70d-f8c8-45c0-9f09-3db6af7154f4.png)
