@@ -210,3 +210,55 @@ curl --location 'http://localhost:8080/pets' \
     }
 }
 ```
+
+# CORS (Cross-Origin Resource Sharing)
+
+CORS is an W3C specification. By using the HTTP headers, that mechanism can validate if a resource `A` can access another resource `B`.
+
+## Same origin.
+A same origin request happens on three situations:
+- Same protocol (`http://` or `https://`);
+- Same host (`www.myhost.com`, for example);
+- Same HTTP port (`8080`, for example).
+
+At that type of requests, the CORS will not throw any errors for the API's user.
+
+## Different origin.
+If any situation for same origin is violated, an error is displayed, telling that the resource is not accessible.
+
+Besides, if still need, that validation can be disabled, by using the `Access-Control-Allow-Origin` header and providing for it all URLs that are allowed to be accessed by different resources. It is possible to also limit the HTTP verbs that resources can use, with the `Access-Control-Allow-Methods` header and passing all allowed verbs separated by comma.
+
+## Examples
+The following table has some examples:
+
+| URL of first resource | URL of second resource | Explanation |
+|:---------------------:|:----------------------:|:-----------:|
+| https://mywebapp.com/pets | https://mywebapp.com/api/pets | The CORS error will not happen, since the protocol, host and port (which is hidden) are the same |
+| http://mywebapp.com/pets | https://mywebapp.com/api/pets | The CORS error **WILL** happen, since the **protocols** are different. |
+| http://mywebapp.com/pets | https://mywebapp.dev/api/pets | The CORS error **WILL** happen, since the **URLs** are different. |
+| https://mywebapp.com:8443/pets | https://mywebapp.com:8080/api/pets | The CORS error **WILL** happen, since the **ports** are different. |
+
+
+## How to allow different origins on Spring.
+The configuration can be done by implementing the `WebMvcConfigurer` interface and overloading the `addCorsMappings` method. Like showed below.
+
+```java
+package br.estudies.spring.pet.configuration;
+
+@Configuration
+public class CorsConfiguration implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry
+            .addMapping("/**")
+            .allowedOrigins("https://mywebapp.com:8443/pets") // shows who can access that resource.
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT"); // shows all accepted HTTPS verbs.
+    }
+}
+```
+That example is from [Alura](https://cursos.alura.com.br/course/spring-boot-3-desenvolva-api-rest-java/task/116048#:~:text=Habilitando%20diferentes%20origens%20no%20Spring%20Boot) post about CORS.
+
+## Another references.
+
+That topic also has information from [Gabriel Machado post on Treina Web](https://www.treinaweb.com.br/blog/o-que-e-cors-e-como-resolver-os-principais-erros).
