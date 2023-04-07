@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import medi.voll.api.medic.DadosCadastroMedico;
+
 /**
  * That class is a Controller which allow us to make HTTP requests.
  * 
@@ -25,8 +27,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MedicController {
 
 	@PostMapping
-	public void createMedic(@RequestBody String body) {
-		System.out.println(body);
+	public void createMedic(@RequestBody DadosCadastroMedico data) {
+		System.out.println(data);
 	}
 
 }
