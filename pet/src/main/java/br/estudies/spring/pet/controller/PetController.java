@@ -30,11 +30,11 @@ public class PetController {
 	 * 
 	 * That is the implementation of GET HTTP verb.
 	 * 
-	 * @return a message saying "something..." for everybody.
+	 * @return a message saying "Au Au!" for everybody.
 	 */
 	@GetMapping
 	public String bark() {
-		return "Something...";
+		return "Au Au!";
 	}
 
 	/**
