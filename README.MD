@@ -262,3 +262,67 @@ That example is from [Alura](https://cursos.alura.com.br/course/spring-boot-3-de
 ## Another references.
 
 That topic also has information from [Gabriel Machado post on Treina Web](https://www.treinaweb.com.br/blog/o-que-e-cors-e-como-resolver-os-principais-erros).
+
+# DTO (_Data Transfer Object_).
+
+DTO (or _Data Transfer Object_) is an object used to transfer data between different parts of systems. That objects contains only the needed data that is being shared to another system, resulting in the economy of resources and more security.
+
+Let's have a look at the JSON received by Pet API.
+
+```json
+{
+    "name": "Nino",
+    "age": 10,
+    "allergies": null,
+    "owner": {
+        "name": "Marcos Favaretto",
+        "contact": {
+            "phone": "+55 (019) 9 9467-2748",
+            "email": "marcosfavaretto.dev@gmail.com"
+        },
+        "address": {
+            "zip_code": "13614260",
+            "street": "Rua Paulo Rebessi",
+            "number": "42",
+            "complement": null,
+            "neighborhood": "Cidade Jardim",
+            "city": "Leme",
+            "state": "SP",
+            "country": "Brazil"
+        }
+    }
+}
+```
+
+That JSON body can be used as a simple String object. On that approach, for any field we want to get its value, would be necessary to use String's method to extract that values.
+
+Java allow us to represent that JSON with classes, by using its fields and methods. The above JSON can be represented by the following class.
+
+```java
+public class Pet {
+
+    private String name;
+    private double age;
+    private String allergies;
+    private Owner owner;
+
+    // Getters and Setters are omitted.
+}
+```
+> Notice that the code which populates the class is not implemented, since it is not the goal of that section.
+
+When we are using _DTOs_, the idea is to share only the needed data about an entity. For example, let's suppose that a third part mobile app consumes the Pet API to ranking the most used names for pets based on its ages.
+
+Since it is not necessary to share the owner's data, we can create a _DTO_ to provide just the necessary information. The following snippet shows a _DTO_ created for Pets that satisfies the the need for third-party software.
+
+```java
+public class PetDTO {
+
+    private String name;
+    private double age;
+
+    // Getters and Setters are omitted.
+}
+```
+
+Beyond the security, that kind of classes also improves cohesion and less coupling for our Java program.
