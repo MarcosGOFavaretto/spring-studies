@@ -231,12 +231,12 @@ Besides, if still need, that validation can be disabled, by using the `Access-Co
 ## Examples
 The following table has some examples:
 
-| URL of first resource | URL of second resource | Explanation |
-|:---------------------:|:----------------------:|:-----------:|
-| https://mywebapp.com/pets | https://mywebapp.com/api/pets | The CORS error will not happen, since the protocol, host and port (which is hidden) are the same |
-| http://mywebapp.com/pets | https://mywebapp.com/api/pets | The CORS error **WILL** happen, since the **protocols** are different. |
-| http://mywebapp.com/pets | https://mywebapp.dev/api/pets | The CORS error **WILL** happen, since the **URLs** are different. |
-| https://mywebapp.com:8443/pets | https://mywebapp.com:8080/api/pets | The CORS error **WILL** happen, since the **ports** are different. |
+|     URL of first resource      |       URL of second resource       |                                           Explanation                                            |
+| :----------------------------: | :--------------------------------: | :----------------------------------------------------------------------------------------------: |
+|    http://mywebapp.com/pets    |   https://mywebapp.com/api/pets    |              The CORS error **WILL** happen, since the **protocols** are different.              |
+|    http://mywebapp.com/pets    |   https://mywebapp.dev/api/pets    |                The CORS error **WILL** happen, since the **URLs** are different.                 |
+|   https://mywebapp.com/pets    |   https://mywebapp.com/api/pets    | The CORS error will not happen, since the protocol, host and port (which is hidden) are the same |
+| https://mywebapp.com:8443/pets | https://mywebapp.com:8080/api/pets |                The CORS error **WILL** happen, since the **ports** are different.                |
 
 
 ## How to allow different origins on Spring.
