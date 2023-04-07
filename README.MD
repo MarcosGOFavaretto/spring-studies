@@ -326,3 +326,46 @@ public class PetDTO {
 ```
 
 Beyond the security, that kind of classes also improves cohesion and less coupling for our Java program.
+
+# Records as DTOs.
+
+After Java 14, we can use the keyword `record` to declare DTOs in a simpler way.
+
+It contains only a constructor. All fields are declared as parameters and the get methods are created by Java without the need of we implement it. Let's create a record for the following DTO.
+
+**DTO**
+```java
+public class PetDTO {
+
+    private String name;
+    private double age;
+
+    public PetDTO (String name, String age) {
+        this.setName(name);
+        this.setAge(age);
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getAge() {
+        return this.age;
+    }
+
+    public void setAge(double age) {
+        this.age = age;
+    }
+}
+```
+
+**Java record**
+```java
+public record PetDTOAsRecord(String name, String age) {}
+```
+
+After the instantiation of `PetDTOAsRecord`, all `get` methods are implemented by Java. It is important to notice that the records are immutable, because of it, `set` methods does not exists for `PetDTOAsRecord`.
