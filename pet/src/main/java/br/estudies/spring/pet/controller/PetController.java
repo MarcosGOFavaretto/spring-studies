@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.estudies.spring.pet.pet.Pet;
+
 /**
  * That class is a Rest Controller, which allow us to make HTTP requests.
  * 
@@ -41,10 +43,11 @@ public class PetController {
 	 * 
 	 * That is the implementation of POST HTTP verb.
 	 * 
-	 * @param body: is the provided JSON body of recived request.
+	 * @param body: is the provided JSON body of received request represented
+	 * by a DTO.
 	 */
 	@PostMapping
-	public void createPet(@RequestBody String body) {
+	public void createPet(@RequestBody Pet body) {
 		System.out.println(body);
 	}
 }
