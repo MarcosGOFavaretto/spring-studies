@@ -1,10 +1,10 @@
 package medi.voll.api.patient;
 
-import medi.voll.api.address.Address;
+import medi.voll.api.address.AddressData;
 
 public record PatientData(
         String name,
         String email,
         String phone,
         String document,
-        Address address) {}
+        AddressData address) {}
