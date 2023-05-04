@@ -1,4 +1,23 @@
 package medi.voll.api.address;
 
-public record Address(String zipCode, String street, String number, String complement, String neighborhood, String city, String state, String country) {
+import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Embeddable
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Address {
+
+    String zipCode;
+    private String street;
+    private String number;
+    private String complement;
+    private String neighborhood;
+    private String city;
+    private String state;
+    private String country;
+
 }
