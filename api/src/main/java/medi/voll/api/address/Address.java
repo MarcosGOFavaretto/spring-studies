@@ -20,4 +20,17 @@ public class Address {
     private String state;
     private String country;
 
+    public Address(AddressData address) {
+
+        this.zipCode = address.zipCode();
+        this.street = address.street();
+        this.number = address.number();
+        this.complement = address.complement();
+        this.neighborhood = address.neighborhood();
+        this.city = address.city();
+        this.state = address.state();
+        this.country = address.country();
+
+    }
+
 }

@@ -1,9 +1,7 @@
-package medi.voll.api.medic;
+package medi.voll.api.patient;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,35 +12,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import medi.voll.api.address.Address;
 
-@Table(name = "medic")
-@Entity(name = "Medic")
+@Table(name = "patient")
+@Entity(name = "Patient")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Medic {
+public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
     private String email;
+    private String phone;
     private String document;
-
-    @Enumerated(EnumType.STRING)
-    private Specialty specialty;
-
     @Embedded
     private Address address;
 
-    public Medic(MedicData data) {
+    public Patient(PatientData patient) {
 
-        this.name = data.name();
-        this.email = data.name();
-        this.document = data.document();
-        this.specialty = data.specialty();
-        this.address = new Address(data.address());
+        this.name = patient.name();
+        this.email = patient.email();
+        this.phone = patient.phone();
+        this.document = patient.document();
+        this.address = new Address(patient.address());
 
     }
 
