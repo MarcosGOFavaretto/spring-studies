@@ -7,10 +7,10 @@ package br.studies.spring.pet.pet;
  * the instantiation of that record class we can access that datas by using
  * the get methods, which are implemented by Java.
  * 
- * That one is a representation of Contact, with a phone and an email.
+ * That one is a representation of Pet, with its name, age and owner.
  * 
  * @author MarcosGOFavaretto (marcosfavaretto.dev@gmail.com).
  *
  */
-public record Contact(String phone, String email) {
+public record PetDTO(String name, double age, OwnerDTO owner) {
 }

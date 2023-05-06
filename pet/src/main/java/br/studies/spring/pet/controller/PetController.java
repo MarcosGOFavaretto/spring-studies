@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.studies.spring.pet.pet.Pet;
+import br.studies.spring.pet.pet.PetDTO;
 
 /**
  * That class is a Rest Controller, which allow us to make HTTP requests.
@@ -47,7 +47,7 @@ public class PetController {
 	 * by a DTO.
 	 */
 	@PostMapping
-	public void createPet(@RequestBody Pet body) {
+	public void createPet(@RequestBody PetDTO body) {
 		System.out.println(body);
 	}
 }
