@@ -1,4 +1,4 @@
-  package br.estudies.spring.pet;
+package br.studies.spring.pet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

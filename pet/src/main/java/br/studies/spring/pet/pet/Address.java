@@ -1,4 +1,4 @@
-package br.estudies.spring.pet.pet;
+package br.studies.spring.pet.pet;
 
 /**
  * Records are immutable classes that requires less implementation of code.

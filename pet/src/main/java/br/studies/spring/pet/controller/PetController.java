@@ -1,4 +1,4 @@
-package br.estudies.spring.pet.controller;
+package br.studies.spring.pet.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.estudies.spring.pet.pet.Pet;
+import br.studies.spring.pet.pet.Pet;
 
 /**
  * That class is a Rest Controller, which allow us to make HTTP requests.
